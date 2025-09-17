@@ -19,6 +19,8 @@
     "@iconify-json/carbon": "^1.2.13",
     "@iconify-json/ph": "^1.2.2",
     "@unocss/reset": "^66.5.1",
+    "contentful-management": "^11.57.4",
+    "dotenv": "^17.2.2",
     "unocss": "^66.5.1"
   }
 }

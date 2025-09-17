@@ -1,43 +1,78 @@
-# Astro Starter Kit: Minimal
+# Portfolio Site 🚀
 
-```sh
-npm create astro@latest -- --template minimal
+My super cool portfolio to get awesome jobs!
+
+## How to Start 🏁
+
+```bash
+# 1. Install stuff
+npm install
+
+# 2. Copy the secret file
+cp .env.example .env
+# (Ask me for the real secrets!)
+
+# 3. Run it!
+npm run dev
+# Go to http://localhost:4321
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## The Cool Tech We Use 🛠️
 
-## 🚀 Project Structure
+- **Astro** - Makes websites SUPER fast
+- **UnoCSS** - Like Tailwind but even faster!
+- **Contentful** - Where we put our content (like a blog)
+- **Cloudinary** - Makes images load fast
+- **Vercel** - Puts our site on the internet
 
-Inside of your Astro project, you'll see the following folders and files:
+## Folders 📁
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+src/
+├── components/    # Lego blocks for the site
+├── layouts/       # The main template
+├── lib/           # Helper code
+└── pages/         # Each page of the website
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Commands You Need 🎮
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+```bash
+npm run dev      # Work on the site
+npm run build    # Make it ready for the internet
+npm run preview  # Check if build worked
+```
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Deploy to Internet 🌍
 
-## 🧞 Commands
+1. Push code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Click "Import Project"
+4. Pick your GitHub repo
+5. Add the secret keys from `.env.example`
+6. Click Deploy!
 
-All commands are run from the root of the project, from a terminal:
+## Need Help? 🤝
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- The code is in `src/`
+- Images go in `public/`
+- Change text in Contentful
+- Dark mode works automatically!
 
-## 👀 Want to learn more?
+## Problems? 🐛
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```bash
+# If stuff breaks:
+rm -rf node_modules
+npm install
+npm run dev
+```
+
+## Make It Yours ✨
+
+1. Change colors in `uno.config.ts`
+2. Update info in `src/components/Hero.astro`
+3. Add projects in Contentful
+4. Replace example emails/links with yours
+
+That's it! Happy coding! 🎉
