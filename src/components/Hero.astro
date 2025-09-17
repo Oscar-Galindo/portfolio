@@ -1,0 +1,101 @@
+---
+const yearsOfExperience = new Date().getFullYear() - 2015;
+---
+
+<section class="min-h-[90vh] flex items-center justify-center px-4 sm:px-6 lg:px-8">
+  <div class="container mx-auto grid lg:grid-cols-2 gap-12 items-center">
+    <div class="space-y-6">
+      <div class="space-y-2">
+        <p class="text-teal-600 dark:text-teal-400 font-semibold">Hi, I'm</p>
+        <h1 class="text-5xl md:text-6xl font-bold gradient-text">
+          Oscar Galindo
+        </h1>
+        <p class="text-2xl md:text-3xl text-gray-600 dark:text-gray-400">
+          Senior Full Stack Developer
+        </p>
+      </div>
+      
+      <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+        With {yearsOfExperience}+ years of experience building scalable web applications,
+        I specialize in creating performant, user-centric solutions that drive business growth.
+        Expert in modern JavaScript, cloud architecture, and agile methodologies.
+      </p>
+      
+      <div class="flex flex-wrap gap-4 text-sm">
+        <div class="flex items-center gap-2">
+          <span class="i-carbon-location w-5 h-5 text-teal-600"></span>
+          <span>Available for Remote/Hybrid</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="i-carbon-certificate-check w-5 h-5 text-teal-600"></span>
+          <span>AWS Certified</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="i-carbon-chart-line w-5 h-5 text-teal-600"></span>
+          <span>200k+ Target Compensation</span>
+        </div>
+      </div>
+      
+      <div class="flex flex-wrap gap-4">
+        <a href="#projects" class="btn">
+          View My Work
+        </a>
+        <a href="#contact" class="btn bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 hover:bg-gray-300 dark:hover:bg-gray-600">
+          Get In Touch
+        </a>
+        <a 
+          href="/resume.pdf" 
+          download
+          class="icon-btn flex items-center gap-2"
+        >
+          <span class="i-carbon-document-download w-5 h-5"></span>
+          <span>Resume</span>
+        </a>
+      </div>
+      
+      <div class="flex gap-6 pt-4">
+        <a href="https://github.com/oscargalindo" target="_blank" class="icon-btn">
+          <span class="i-carbon-logo-github w-6 h-6"></span>
+        </a>
+        <a href="https://linkedin.com/in/oscargalindo" target="_blank" class="icon-btn">
+          <span class="i-carbon-logo-linkedin w-6 h-6"></span>
+        </a>
+        <a href="mailto:oscar@example.com" class="icon-btn">
+          <span class="i-carbon-email w-6 h-6"></span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="relative">
+      <div class="absolute inset-0 bg-gradient-to-r from-teal-400 to-blue-500 rounded-full blur-3xl opacity-20"></div>
+      <div class="relative bg-gradient-to-br from-teal-500 to-blue-600 rounded-2xl p-8 shadow-2xl">
+        <div class="space-y-6 text-white">
+          <div class="text-6xl font-bold">{yearsOfExperience}+</div>
+          <div class="space-y-4">
+            <div class="flex items-center gap-3">
+              <span class="i-carbon-code w-6 h-6"></span>
+              <span>Full Stack Development</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="i-carbon-cloud w-6 h-6"></span>
+              <span>Cloud Architecture (AWS, GCP)</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="i-carbon-chart-line-data w-6 h-6"></span>
+              <span>Performance Optimization</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="i-carbon-group w-6 h-6"></span>
+              <span>Team Leadership</span>
+            </div>
+          </div>
+          
+          <div class="pt-6 border-t border-white/20">
+            <p class="text-sm opacity-90">Recent Achievement:</p>
+            <p class="font-semibold">Reduced load times by 65% for Fortune 500 client</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

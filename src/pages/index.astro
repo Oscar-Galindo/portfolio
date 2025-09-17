@@ -1,16 +1,180 @@
 ---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import ProjectCard from '../components/ProjectCard.astro';
 
+const mockProjects = [
+  {
+    title: "E-Commerce Platform Optimization",
+    description: "Led performance optimization for high-traffic e-commerce platform serving 2M+ daily users",
+    technologies: ["React", "Node.js", "Redis", "PostgreSQL", "AWS"],
+    imageUrl: "portfolio/ecommerce-dashboard",
+    projectUrl: "https://example.com",
+    results: [
+      { metric: "Load Time", value: "65% faster" },
+      { metric: "Conversion Rate", value: "+23%" },
+      { metric: "Server Costs", value: "-40%" }
+    ]
+  },
+  {
+    title: "Real-Time Analytics Dashboard",
+    description: "Built scalable analytics platform processing 100M+ events daily with sub-second query times",
+    technologies: ["Vue.js", "Python", "Kafka", "ClickHouse", "Kubernetes"],
+    imageUrl: "portfolio/analytics-platform",
+    githubUrl: "https://github.com",
+    results: [
+      { metric: "Query Speed", value: "200ms avg" },
+      { metric: "Data Processing", value: "100M events/day" }
+    ]
+  },
+  {
+    title: "AI-Powered Content Management",
+    description: "Developed intelligent CMS with automated content tagging and personalization",
+    technologies: ["Next.js", "FastAPI", "TensorFlow", "MongoDB", "Docker"],
+    imageUrl: "portfolio/ai-cms",
+    projectUrl: "https://example.com",
+    githubUrl: "https://github.com",
+    results: [
+      { metric: "Content Efficiency", value: "+45%" },
+      { metric: "User Engagement", value: "+67%" }
+    ]
+  }
+];
+
+const skills = [
+  { category: "Frontend", items: ["React", "Vue.js", "Next.js", "TypeScript", "Tailwind CSS"] },
+  { category: "Backend", items: ["Node.js", "Python", "Go", "GraphQL", "REST APIs"] },
+  { category: "Database", items: ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch"] },
+  { category: "Cloud/DevOps", items: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"] }
+];
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+  <Hero />
+  
+  <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Featured Projects</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Delivering measurable business impact through innovative solutions
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {mockProjects.map(project => (
+          <ProjectCard {...project} />
+        ))}
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="/projects" class="btn">
+          View All Projects →
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Technical Expertise</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Modern tech stack focused on performance and scalability
+        </p>
+      </div>
+      
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {skills.map(({ category, items }) => (
+          <div class="card">
+            <h3 class="text-xl font-bold mb-4 gradient-text">{category}</h3>
+            <div class="space-y-2">
+              {items.map(item => (
+                <div class="flex items-center gap-2">
+                  <span class="i-carbon-checkmark-filled w-4 h-4 text-teal-600"></span>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+  
+  <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
+    <div class="container mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold mb-4">Professional Experience</h2>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Building products that scale across industries
+        </p>
+      </div>
+      
+      <div class="max-w-3xl mx-auto space-y-8">
+        <div class="card border-l-4 border-teal-600">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-xl font-bold">Senior Full Stack Developer</h3>
+              <p class="text-teal-600">TechCorp Solutions</p>
+            </div>
+            <span class="text-sm text-gray-500">2020 - Present</span>
+          </div>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <span class="i-carbon-arrow-right w-4 h-4 text-teal-600 mt-1 flex-shrink-0"></span>
+              <span>Led team of 5 developers to deliver enterprise SaaS platform serving 500+ companies</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="i-carbon-arrow-right w-4 h-4 text-teal-600 mt-1 flex-shrink-0"></span>
+              <span>Reduced infrastructure costs by 40% through AWS optimization and serverless architecture</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="i-carbon-arrow-right w-4 h-4 text-teal-600 mt-1 flex-shrink-0"></span>
+              <span>Implemented CI/CD pipeline reducing deployment time from 2 hours to 15 minutes</span>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="card border-l-4 border-blue-600">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <h3 class="text-xl font-bold">Full Stack Developer</h3>
+              <p class="text-blue-600">StartupXYZ</p>
+            </div>
+            <span class="text-sm text-gray-500">2017 - 2020</span>
+          </div>
+          <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+            <li class="flex items-start gap-2">
+              <span class="i-carbon-arrow-right w-4 h-4 text-blue-600 mt-1 flex-shrink-0"></span>
+              <span>Built MVP that secured $2M Series A funding</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="i-carbon-arrow-right w-4 h-4 text-blue-600 mt-1 flex-shrink-0"></span>
+              <span>Scaled platform from 0 to 50,000 active users</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-teal-600 to-blue-600">
+    <div class="container mx-auto text-center text-white">
+      <h2 class="text-4xl font-bold mb-4">Let's Build Something Great</h2>
+      <p class="text-xl mb-8 opacity-90">
+        Available for senior positions and high-impact projects
+      </p>
+      <div class="flex justify-center gap-4">
+        <a href="mailto:oscar@example.com" class="btn bg-white text-teal-600 hover:bg-gray-100">
+          <span class="i-carbon-email w-5 h-5 mr-2"></span>
+          Email Me
+        </a>
+        <a href="https://linkedin.com/in/oscargalindo" class="btn bg-white/20 text-white hover:bg-white/30">
+          <span class="i-carbon-logo-linkedin w-5 h-5 mr-2"></span>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
