@@ -1,78 +1,111 @@
-# Portfolio Site 🚀
+# Portfolio - Oscar Galindo
 
-My super cool portfolio to get awesome jobs!
+Professional portfolio showcasing enterprise-level full stack development expertise. Built with Astro, Contentful CMS, and Cloudinary. Features scalable architecture, performance optimization, and modern web technologies. Specializing in React, Node.js, AWS, and cloud-native solutions for high-impact projects.
 
-## How to Start 🏁
+## 🚀 Quick Start
 
 ```bash
-# 1. Install stuff
+# Install dependencies
 npm install
 
-# 2. Copy the secret file
+# Copy environment variables
 cp .env.example .env
-# (Ask me for the real secrets!)
+# Add your API keys
 
-# 3. Run it!
+# Start development server
 npm run dev
-# Go to http://localhost:4321
+# Open http://localhost:4321
+
+# Build for production
+npm run build
 ```
 
-## The Cool Tech We Use 🛠️
+## 💼 Tech Stack
 
-- **Astro** - Makes websites SUPER fast
-- **UnoCSS** - Like Tailwind but even faster!
-- **Contentful** - Where we put our content (like a blog)
-- **Cloudinary** - Makes images load fast
-- **Vercel** - Puts our site on the internet
+- **Framework:** Astro (Static Site Generator)
+- **CMS:** Contentful (Headless CMS)
+- **Media:** Cloudinary (Image Optimization)
+- **Styling:** UnoCSS / Tailwind
+- **Deployment:** Vercel
+- **Language:** TypeScript
 
-## Folders 📁
+## ✨ Features
 
+- ⚡ Lightning-fast performance (95+ Lighthouse score)
+- 🎨 Dark/Light mode with system preference detection
+- 📱 Fully responsive design
+- 🖼️ Optimized image loading with Cloudinary
+- 📝 Dynamic content management via Contentful
+- 🔍 SEO optimized with meta tags
+- 🎯 Structured data for better search visibility
+- 🚀 Automated CI/CD with GitHub Actions
+
+## 🛠️ Setup
+
+### Prerequisites
+- Node.js 18+
+- Contentful account
+- Cloudinary account
+- Vercel account (for deployment)
+
+### Environment Variables
+
+Create a `.env` file:
+
+```env
+# Contentful
+CONTENTFUL_SPACE_ID=your_space_id
+CONTENTFUL_ACCESS_TOKEN=your_access_token
+CONTENTFUL_PREVIEW_TOKEN=your_preview_token
+
+# Cloudinary
+PUBLIC_CLOUDINARY_CLOUD_NAME=your_cloud_name
+CLOUDINARY_API_KEY=your_api_key
+CLOUDINARY_API_SECRET=your_api_secret
+
+# Site Config
+PUBLIC_SITE_URL=https://yourdomain.com
+PUBLIC_EMAIL=your@email.com
 ```
-src/
-├── components/    # Lego blocks for the site
-├── layouts/       # The main template
-├── lib/           # Helper code
-└── pages/         # Each page of the website
-```
 
-## Commands You Need 🎮
+### Contentful Setup
 
+1. Create content models for:
+   - Projects
+   - Skills
+   - Experience
+   - Testimonials
+
+2. Run setup script (optional):
 ```bash
-npm run dev      # Work on the site
-npm run build    # Make it ready for the internet
-npm run preview  # Check if build worked
+node scripts/setup-contentful.js
 ```
 
-## Deploy to Internet 🌍
+## 📁 Project Structure
 
-1. Push code to GitHub
-2. Go to [vercel.com](https://vercel.com)
-3. Click "Import Project"
-4. Pick your GitHub repo
-5. Add the secret keys from `.env.example`
-6. Click Deploy!
-
-## Need Help? 🤝
-
-- The code is in `src/`
-- Images go in `public/`
-- Change text in Contentful
-- Dark mode works automatically!
-
-## Problems? 🐛
-
-```bash
-# If stuff breaks:
-rm -rf node_modules
-npm install
-npm run dev
+```
+portfolio/
+├── src/
+│   ├── components/    # Astro components
+│   ├── layouts/       # Page layouts
+│   ├── pages/         # Route pages
+│   ├── lib/          # Utilities & integrations
+│   └── styles/       # Global styles
+├── public/           # Static assets
+├── scripts/          # Setup & build scripts
+└── .github/          # GitHub Actions workflows
 ```
 
-## Make It Yours ✨
+## 🚀 Deployment
 
-1. Change colors in `uno.config.ts`
-2. Update info in `src/components/Hero.astro`
-3. Add projects in Contentful
-4. Replace example emails/links with yours
+### Staging
+- Push to `staging` branch
+- Automatically deploys to staging URL
 
-That's it! Happy coding! 🎉
+### Production
+- Merge to `main` branch
+- Automatically deploys to production
+
+## 📄 License
+
+MIT
