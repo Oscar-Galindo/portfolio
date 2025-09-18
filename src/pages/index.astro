@@ -556,28 +556,27 @@ const clients = [
 
     gsap.registerPlugin(ScrollTrigger);
 
-    // Hero title animation
-    gsap.from('.hero-title .line', {
-      y: 100,
+    // Hero animations
+    gsap.from('.hero-name', {
+      y: 50,
       opacity: 0,
-      duration: 1,
-      stagger: 0.1,
+      duration: 1.2,
       ease: 'power4.out',
     });
 
-    gsap.from('.hero-subtitle', {
+    gsap.from('.hero-role', {
       y: 30,
       opacity: 0,
       duration: 1,
-      delay: 0.3,
+      delay: 0.2,
       ease: 'power3.out',
     });
 
     gsap.from('.hero-cta', {
-      y: 30,
+      y: 20,
       opacity: 0,
       duration: 1,
-      delay: 0.5,
+      delay: 0.4,
       ease: 'power3.out',
     });
 
@@ -599,7 +598,7 @@ const clients = [
     });
 
     // About section animation
-    gsap.from('.about-title', {
+    gsap.from('.about-greeting', {
       scrollTrigger: {
         trigger: '.about',
         start: 'top center',
