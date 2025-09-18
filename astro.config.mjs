@@ -4,6 +4,7 @@ import UnoCSS from 'unocss/astro';
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'static',
   integrations: [
     UnoCSS({
       injectReset: true
@@ -12,6 +13,9 @@ export default defineConfig({
   vite: {
     optimizeDeps: {
       exclude: ['@resvg/resvg-js']
+    },
+    ssr: {
+      noExternal: ['gsap', 'lenis']
     }
   }
 });
