@@ -1,9 +1,22 @@
 ---
 import MinimalLayout from '../layouts/MinimalLayout.astro';
-import { getOptimizedImageUrl } from '../lib/cloudinary';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import { getProjects, getSkills, getExperiences } from '../lib/contentful-client';
 
-// Mock data for now - will be replaced with Contentful
-const projects = [
+// Fetch data from Contentful
+const projects = await getProjects();
+const skills = await getSkills();
+const experiences = await getExperiences();
+
+// Group skills by category
+const skillsByCategory = skills.reduce((acc, skill) => {
+  if (!acc[skill.category]) acc[skill.category] = [];
+  acc[skill.category].push(skill);
+  return acc;
+}, {} as Record<string, typeof skills>);
+
+// Fallback mock data if Contentful is empty
+const mockProjects = projects.length === 0 ? [
   {
     id: 1,
     title: "Enterprise SaaS Platform",
