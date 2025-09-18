@@ -11,10 +11,11 @@ import {
 
 export default defineConfig({
   shortcuts: [
-    ['btn', 'px-4 py-2 rounded-lg inline-block bg-teal-600 text-white cursor-pointer hover:bg-teal-700 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50 transition-colors'],
-    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100 hover:text-teal-600'],
-    ['card', 'p-6 rounded-xl bg-white dark:bg-gray-800 shadow-lg hover:shadow-xl transition-shadow'],
-    ['gradient-text', 'text-transparent bg-clip-text bg-gradient-to-r from-teal-500 to-blue-600'],
+    ['btn', 'px-8 py-4 rounded-full inline-block bg-white text-black font-medium cursor-pointer hover:bg-gray-200 transition-all duration-300 transform hover:scale-105'],
+    ['btn-outline', 'px-8 py-4 rounded-full inline-block border-2 border-white text-white font-medium cursor-pointer hover:bg-white hover:text-black transition-all duration-300'],
+    ['icon-btn', 'inline-block cursor-pointer select-none opacity-75 transition duration-200 ease-in-out hover:opacity-100'],
+    ['card', 'rounded-2xl overflow-hidden transition-all duration-500'],
+    ['section-padding', 'px-6 md:px-12 lg:px-24 xl:px-32'],
   ],
   presets: [
     presetUno(),
@@ -26,8 +27,8 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'Inter:400,600,800',
-        mono: 'JetBrains Mono:400,600',
+        sans: 'Inter:100,200,300,400,500,600,700,800,900',
+        display: 'Inter:900',
       },
     }),
   ],
@@ -37,10 +38,32 @@ export default defineConfig({
   ],
   theme: {
     colors: {
-      primary: {
-        DEFAULT: '#14b8a6',
-        dark: '#0f766e',
-        light: '#5eead4'
+      dark: '#0a0a0a',
+      darker: '#000000',
+      light: '#ffffff',
+      gray: {
+        50: '#fafafa',
+        100: '#f4f4f5',
+        200: '#e4e4e7',
+        300: '#d4d4d8',
+        400: '#a1a1aa',
+        500: '#71717a',
+        600: '#52525b',
+        700: '#3f3f46',
+        800: '#27272a',
+        900: '#18181b',
+      }
+    },
+    animation: {
+      keyframes: {
+        'fade-in': '{from{opacity:0}to{opacity:1}}',
+        'fade-up': '{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}',
+        'scale-in': '{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}',
+      },
+      durations: {
+        'fade-in': '0.5s',
+        'fade-up': '0.6s',
+        'scale-in': '0.5s',
       }
     }
   }
