@@ -95,8 +95,9 @@ const {
       right: 0;
       z-index: 100;
       padding: 2rem 0;
-      background: linear-gradient(to bottom, var(--bg) 0%, transparent 100%);
+      background: linear-gradient(to bottom, rgba(10, 10, 10, 0.8) 0%, transparent 100%);
       backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .nav-container {
@@ -127,12 +128,25 @@ const {
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 400;
-      transition: opacity 0.3s ease;
+      transition: all 0.3s ease;
       position: relative;
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
     }
 
     .nav-link:hover {
-      opacity: 0.7;
+      opacity: 0.9;
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link:last-child {
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 0.5rem 1.5rem;
+    }
+
+    .nav-link:last-child:hover {
+      border-color: rgba(255, 255, 255, 0.4);
+      background: rgba(255, 255, 255, 0.05);
     }
 
     main {

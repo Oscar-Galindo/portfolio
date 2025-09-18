@@ -15,8 +15,8 @@ const skillsByCategory = skills.reduce((acc, skill) => {
   return acc;
 }, {} as Record<string, typeof skills>);
 
-// Fallback mock data if Contentful is empty
-const mockProjects = projects.length === 0 ? [
+// Use Contentful projects or fallback to mock data
+const displayProjects = projects.length > 0 ? projects : [
   {
     id: 1,
     title: "Enterprise SaaS Platform",
@@ -153,7 +153,7 @@ const clients = [
     <div class="projects-container">
       <h2 class="projects-title">Selected Projects</h2>
       <div class="projects-grid">
-        {projects.map((project, index) => (
+        {displayProjects.map((project, index) => (
           <a href={`/projects/${project.slug}`} class="project-card" data-index={index}>
             <div class="project-image-wrapper">
               <img
